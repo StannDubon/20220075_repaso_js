@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+    @import url('https://fonts.googleapis.com/css2?family=Concert+One&display=swap');
+
+    *{
+        margin: 0%;
+        padding: 0%;
+        font-family: "Concert One", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+    }
+    html, body{
+        background-image: url("https://cdnb.artstation.com/p/assets/images/images/023/533/793/original/helo-nery-undertale.gif?1579532716");
+        background-size: cover;
+        width: 100vw;
+    }
+
+    #contenido{
+        padding-top: 30px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 25px;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        
+    }
+
+    .card{
+        background-color: rgba(0, 0, 0, 0.514);
+        backdrop-filter: blur(20px);
+        width: 35%;
+        padding: 15px;
+        border-radius: 20px;
+    }
+
+    .row{
+        display: flex;
+    }
+
+    .row b{
+        color: #6aadfa;
+        margin-right: 10px;
+    }
+
+    .row p{
+        color: white;
+    }
+
+    @media only screen and (max-width: 1000px){
+
+        #contenido{
+        padding-top: 30px;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        gap: 25px;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        }
+
+        .card{
+            width: 80%;
+        }
+    }
+</style>
+<body>
+    <div id="contenido"></div>
+
+    
+    <script>
+
+        const undertaleCharacters = [
+            {
+                name: "Frisk",
+                role: "Protagonista",
+                soul: "Determinación",
+                weapon: "Ninguno",
+                enemy: "Flowey",
+                quote: "It's me, Frisk."
+            },
+            {
+                name: "Sans",
+                role: "Esqueleto perezoso",
+                soul: "Indiferencia",
+                weapon: "Huesos y gaster blasters",
+                enemy: "Chara",
+                quote: "Heh. That's the expression of someone who's died seven times in a row."
+            },
+            {
+                name: "Papyrus",
+                role: "Guardián de los puzzles",
+                soul: "Esperanza",
+                weapon: "Huesos azules y trampas de puzzles",
+                enemy: "Frisk (pacifista), Chara",
+                quote: "I, the great Papyrus, have some things to say. First, you're a freaking weirdo!"
+            },
+            {
+                name: "Undyne",
+                role: "Capitana de la Guardia Real",
+                soul: "Valentía",
+                weapon: "Lanza y lanzas de energía",
+                enemy: "Frisk (pacifista), Chara",
+                quote: "NGAAAAAHHHHHHH!!!"
+            },
+            {
+                name: "Alphys",
+                role: "Científica real",
+                soul: "Intelecto",
+                weapon: "Ninguno (tecnología)",
+                enemy: "Frisk (pacifista), Chara",
+                quote: "Ummm... Th-they're just robots, L-LOOOOOK!!!"
+            },
+            {
+                name: "Toriel",
+                role: "Guardiana de las Ruinas",
+                soul: "Compasión",
+                weapon: "Magia de fuego y manos",
+                friends: ["Frisk", "Sans"],
+                enemy: "Frisk (genocida), Chara",
+                quote: "Greetings, my child. Do not worry, I did not leave you."
+            },
+            {
+                name: "Mettaton",
+                role: "Estrella de televisión",
+                soul: "Ego",
+                weapon: "Blaster de mettaton, piernas de mettaton",
+                friends: ["Alphys"],
+                enemy: "Frisk (genocida), Chara",
+                quote: "Oh, yes! Welcome, beauties, to today's quiz show!"
+            },
+            {
+                name: "Asriel Dreemurr",
+                role: "Príncipe de los monstruos",
+                soul: "Esperanza",
+                weapon: "Hiper Goner, Chaos Buster",
+                friends: ["Chara", "Frisk"],
+                enemy: "Ninguno",
+                quote: "But it refused."
+            },
+            {
+                name: "Chara",
+                role: "Hermano adoptivo de Frisk",
+                soul: "Humanidad",
+                weapon: "Cuchillo",
+                friends: ["Frisk", "Asriel"],
+                enemy: "Todos",
+                quote: "The true name."
+            },
+            {
+                name: "Flowey",
+                role: "Flor dorada",
+                soul: "Ninguno (antes, Determinación)",
+                weapon: "Bullet board",
+                friends: ["Ninguno"],
+                enemy: "Todos",
+                quote: "That's a wonderful idea!"
+            }
+        ];
+        
+        const ShowCharacters = ()=>{
+            const contenido = document.getElementById("contenido");
+            undertaleCharacters.map(character=>{
+                contenido.innerHTML += `
+                <div class="card">
+                    <div class="row">
+                        <b>Name:</b><p class="name">${character.name}</p>
+                    </div>
+                    <div class="row">
+                        <b>Role:</b><p class="name">${character.role}</p>
+                    </div>
+                    <div class="row">
+                        <b>Soul:</b><p class="name">${character.soul}</p>
+                    </div>
+                    <div class="row">
+                        <b>Weapon:</b><p class="name">${character.weapon}</p>
+                    </div>
+                    <div class="row">
+                        <b>Enemy:</b><p class="name">${character.enemy}</p>
+                    </div>
+                    <div class="row">
+                        <b>Quote:</b><p class="name">${character.quote}</p>
+                    </div>
+                </div>
+                `
+            })
+        }
+
+        ShowCharacters()
+        
+
+    </script>
+</body>
+
+</html>

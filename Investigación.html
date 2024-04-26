@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+    *{
+        margin: 0%;
+        padding: 0%;
+        font-family: "Poppins", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        color: white;
+    }
+    
+    html{
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-image: url("https://c.tenor.com/7m-L_kQ0NgQAAAAd/among-us.gif");
+        background-size: cover;
+    }
+
+    body{
+        margin-top: 30px;
+        width: 900px;
+        background-color: rgba(34, 18, 78, 0.671);
+        backdrop-filter: blur(20px);
+        padding: 40px;
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    h1{
+        font-weight: 500;
+    }
+
+    .example{
+        background-color: black;
+        margin-top: 20px;
+        padding: 20px;
+        border-radius: 10px;
+    }
+
+    .result{
+        color: gray;
+    }
+
+    .result b{
+        margin-right: 10px;
+        color: gray;
+    }
+</style>
+<body>
+    <div class="metodo-explanation">
+        <h1>Reduce</h1>
+        <p>El método reduce() ejecuta una función reductora sobre cada elemento de un array, devolviendo al final un único valor. Es útil cuando deseas realizar alguna operación en cada elemento del array y combinar los resultados en un solo valor.Ejemplo:Supongamos que tenemos un array de números y queremos obtener la suma de todos ellos utilizando reduce()</p>
+    
+        <div class="example">
+            <p>
+                const numeros = [1, 2, 3, 4, 5];
+                <br>
+                const suma = numeros.reduce((acumulador, valorActual) => {
+                    return acumulador + valorActual;
+                }, 0);
+                <br>
+                console.log(suma); 
+                <br><br>
+                <p class="result"><b>Output:</b>15 (1 + 2 + 3 + 4 + 5)</p>
+            </p>
+        </div>
+    </div>
+
+    <div class="metodo-explanation">
+        <h1>Filter</h1>
+        <p>El método filter() crea un nuevo array con todos los elementos que pasan una prueba implementada por la función proporcionada. Es útil cuando deseas filtrar elementos de un array según ciertos criterios.Ejemplo:Supongamos que tenemos un array de números y queremos filtrar solo los números pares utilizando filter()</p>
+    
+        <div class="example">
+            <p>
+                const numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+                <br>
+                const numerosPares = numeros.filter(numero => {
+                    return numero % 2 === 0;
+                });
+                <br>
+                console.log(numerosPares);  
+                <br><br>
+                <p class="result"><b>Output:</b>[2, 4, 6, 8, 10]</p>          
+            </p>
+        </div>
+    </div>
+</body>
+</html>
